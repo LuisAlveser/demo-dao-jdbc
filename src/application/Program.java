@@ -20,25 +20,30 @@ public class Program {
     
 		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
-		System.out.println("=== Test 1: seller finbyById====");
+		//System.out.println("=== Test 1: seller finbyById====");
 		
 		Seller seller =sellerDao.findyById(3);
       // System.out.print(seller);
        
-       System.out.println("=== Test 2: seller finbyByDepartment====");
+     //  System.out.println("=== Test 2: seller finbyByDepartment====");
        Department dep = new Department(2,null);
        List<Seller>list = sellerDao.findyByIdDepartment(dep);
        
        //for(Seller obj :list) {
     	  // System.out.println(obj);
       // }
-       System.out.println("=== Test 3: seller finbyAll====");
+      // System.out.println("=== Test 3: seller finbyAll====");
     
          list = sellerDao.findyAll();
        
-       for(Seller obj :list) {
-    	   System.out.println(obj);
-       }
+    //   for(Seller obj :list) {
+    //	   System.out.println(obj);
+     //  }
+         System.out.println("=== Test 4: seller insert====");
+         Seller newSeller = new Seller(null,"luis","luis@gmail.com",new Date(),4000.0,dep);
+         sellerDao.insert(newSeller);
+        System.out.print("Inseted New ID :"+newSeller.getId()); 
+         
 	}
 
 }
