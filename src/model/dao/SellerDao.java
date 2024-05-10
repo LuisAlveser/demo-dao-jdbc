@@ -16,5 +16,7 @@ public interface SellerDao {
 	Seller  findyById(Integer id);
 	
 	List<Seller>findyAll();
+	
+	List<Seller>findyByIdDepartment(Department department);
 
 }

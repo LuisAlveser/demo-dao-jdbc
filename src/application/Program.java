@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
@@ -22,7 +23,15 @@ public class Program {
 		System.out.println("=== Test 1: seller finbyById====");
 		
 		Seller seller =sellerDao.findyById(3);
-       System.out.print(seller);
+      // System.out.print(seller);
+       
+       System.out.println("=== Test 2: seller finbyByDepartment====");
+       Department dep = new Department(2,null);
+       List<Seller>list = sellerDao.findyByIdDepartment(dep);
+       
+       for(Seller obj :list) {
+    	   System.out.println(obj);
+       }
 	}
 
 }
