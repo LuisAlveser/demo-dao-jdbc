@@ -39,11 +39,16 @@ public class Program {
     //   for(Seller obj :list) {
     //	   System.out.println(obj);
      //  }
-         System.out.println("=== Test 4: seller insert====");
-         Seller newSeller = new Seller(null,"luis","luis@gmail.com",new Date(),4000.0,dep);
-         sellerDao.insert(newSeller);
-        System.out.print("Inseted New ID :"+newSeller.getId()); 
+     //    System.out.println("=== Test 4: seller insert====");
+      //   Seller newSeller = new Seller(null,"luis","luis@gmail.com",new Date(),4000.0,dep);
+      //   sellerDao.insert(newSeller);
+       // System.out.print("Inseted New ID :"+newSeller.getId()); 
          
+         System.out.println("=== Test 5: seller update====");
+         seller=sellerDao.findyById(1);
+         seller.setName("Maria Luiza");
+         sellerDao.update(seller);
+         System.out.print("Update completed");
 	}
 
 }
