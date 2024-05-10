@@ -29,6 +29,13 @@ public class Program {
        Department dep = new Department(2,null);
        List<Seller>list = sellerDao.findyByIdDepartment(dep);
        
+       //for(Seller obj :list) {
+    	  // System.out.println(obj);
+      // }
+       System.out.println("=== Test 3: seller finbyAll====");
+    
+         list = sellerDao.findyAll();
+       
        for(Seller obj :list) {
     	   System.out.println(obj);
        }
