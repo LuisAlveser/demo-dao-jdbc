@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import application.DbIntegrityException;
@@ -119,8 +120,28 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
 	@Override
 	public List<Department> findyAll() {
-		// TODO Auto-generated method stub
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		
+		try {
+			st=conn.prepareStatement("SELECT * FROM department");
+			rs=st.executeQuery();
+			List<Department>list = new ArrayList<>();
+			while(rs.next()) {
+				Department dep = new Department();
+				dep.setId(rs.getInt("Id"));
+				dep.setName(rs.getString("Name"));
+				list.add(dep);
+				
+			}
+			
+			return list;
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
 		return null;
+	
 	}
 	
 	

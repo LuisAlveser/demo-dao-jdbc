@@ -1,5 +1,6 @@
 package application;
 
+import java.util.List;
 import java.util.Scanner;
 
 import model.dao.DaoFactory;
@@ -18,7 +19,7 @@ public class Program_2 {
 	//	Department dep = new Department(2,null);
 	//   departmentDao.insert(dep);
 		
-		System.out.println("=== Test 2: department  update  and finbyById===");
+		//System.out.println("=== Test 2: department  update  and finbyById===");
 		//finbybyId
 	//	Department dep =departmentDao.findyById(2);
 	//	System.out.println(dep);
@@ -28,15 +29,18 @@ public class Program_2 {
 		//departmentDao.update(dep1);
 	//	System.out.print("Update completed");
 		
-		System.out.println("=== Test 3: department  deleteById===");
-		System.out.print("Enter id for delete test: ");
-		int id = sc.nextInt();
-		departmentDao.deletebyId(id);;
-		System.out.println("Delete completed");
+		//System.out.println("=== Test 3: department  deleteById===");
+	//	System.out.print("Enter id for delete test: ");
+	//	int id = sc.nextInt();
+	//	departmentDao.deletebyId(id);;
+	//	System.out.println("Delete completed");
 		
-	
+		System.out.println("=== Test 4: department  finbyAll===");
+		List<Department> list = departmentDao.findyAll();
+		for (Department d : list) {
+			System.out.println(d);
 	}
 
 	
-
+	}
 }
