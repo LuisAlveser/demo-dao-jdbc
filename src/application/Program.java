@@ -1,6 +1,7 @@
 package application;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import model.dao.DaoFactory;
+import model.dao.DepartmentDao;
 import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
@@ -44,18 +46,18 @@ public class Program {
       //   Seller newSeller = new Seller(null,"luis","luis@gmail.com",new Date(),4000.0,dep);
       //   sellerDao.insert(newSeller);
        // System.out.print("Inseted New ID :"+newSeller.getId()); 
-         
+      
       //   System.out.println("=== Test 5: seller update====");
          seller=sellerDao.findyById(1);
          seller.setName("Maria Luiza");
          sellerDao.update(seller);
        //  System.out.print("Update completed");
          
-         System.out.println("=== Test 6: seller delete====");
-         System.out.print("Enter id for delete test: ");
-         int id =sc.nextInt();
-         sellerDao.deletebyId(id);
-         System.out.print("Delete completed");
+      //   System.out.println("=== Test 6: seller delete====");
+      //   System.out.print("Enter id for delete test: ");
+      //   int id =sc.nextInt();
+       //  sellerDao.deletebyId(id);
+       //  System.out.print("Delete completed");
 	}
 
 }

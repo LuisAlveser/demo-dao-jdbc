@@ -17,4 +17,5 @@ public interface DepartmentDao {
 	
 	List<Department>findyAll();
   
+	
 }
