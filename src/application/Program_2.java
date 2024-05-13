@@ -20,13 +20,21 @@ public class Program_2 {
 		
 		System.out.println("=== Test 2: department  update  and finbyById===");
 		//finbybyId
-		Department dep =departmentDao.findyById(2);
-		System.out.println(dep);
+	//	Department dep =departmentDao.findyById(2);
+	//	System.out.println(dep);
 		//update
-		Department dep1 =departmentDao.findyById(5);
-		dep1.setName("Class");
-		departmentDao.update(dep1);
-		System.out.print("Update completed");
+	//	Department dep1 =departmentDao.findyById(5);
+	//	dep1.setName("Class");
+		//departmentDao.update(dep1);
+	//	System.out.print("Update completed");
+		
+		System.out.println("=== Test 3: department  deleteById===");
+		System.out.print("Enter id for delete test: ");
+		int id = sc.nextInt();
+		departmentDao.deletebyId(id);;
+		System.out.println("Delete completed");
+		
+	
 	}
 
 	
