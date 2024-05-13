@@ -21,7 +21,7 @@ import model.entities.Seller;
 public class Program {
 	 public static void main(String[] args) throws SQLException  {
     
-		Scanner sc = new Scanner(System.in);
+	
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		//System.out.println("=== Test 1: seller finbyById====");
 		
