@@ -9,6 +9,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
@@ -18,7 +19,7 @@ import model.entities.Seller;
 public class Program {
 	 public static void main(String[] args) throws SQLException  {
     
-		
+		Scanner sc = new Scanner(System.in);
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		//System.out.println("=== Test 1: seller finbyById====");
 		
@@ -44,11 +45,17 @@ public class Program {
       //   sellerDao.insert(newSeller);
        // System.out.print("Inseted New ID :"+newSeller.getId()); 
          
-         System.out.println("=== Test 5: seller update====");
+      //   System.out.println("=== Test 5: seller update====");
          seller=sellerDao.findyById(1);
          seller.setName("Maria Luiza");
          sellerDao.update(seller);
-         System.out.print("Update completed");
+       //  System.out.print("Update completed");
+         
+         System.out.println("=== Test 6: seller delete====");
+         System.out.print("Enter id for delete test: ");
+         int id =sc.nextInt();
+         sellerDao.deletebyId(id);
+         System.out.print("Delete completed");
 	}
 
 }
